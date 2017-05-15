@@ -38,6 +38,7 @@ const images = {
   babelLogo: require("../assets/babel.png"),
   prettierLogo: require("../assets/prettier.png"),
   ocamlLogo: require("../assets/ocaml.png"),
+  reasonCorner: require("../assets/reason-small.jpg"),
   bloombergKeyboard: require("../assets/bloomberg.jpg"),
   reasonReactLogo: require("../assets/reasonreact.png"),
   atomTypes: require("../assets/types.png"),
@@ -129,6 +130,13 @@ export default class Presentation extends React.Component {
           <Image src={images.ocamlLogo} width="100%"/>
         </Slide>
 
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps >Reason is... </Heading>
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 📝 New syntax for OCaml</Heading>
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 🌊 Compiler workflow</Heading>
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 🛁 Docs, libs, utils</Heading>
+        </Slide>
+
         <Slide transition={["slide"]} bgImage={images.reasonTooling} />
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -140,14 +148,14 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={2}>OCaml/Reason</Heading>
-          <Text>⬇️</Text>
+          <Text margin={"30px 0"}>⬇️</Text>
           <Heading size={2}>Bucklescript</Heading>
-          <Text>⬇️</Text>
+          <Text margin={"30px 0"}>⬇️</Text>
           <Heading size={2}>JavaScript</Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={6} textColor="tertiary" margin={10}>
+          <Heading size={3} textAlign="left" textColor="tertiary" margin={10}>
             Why should I write JavaScript in a meta language for a 20 year old systems language that is compiled to JavaScript by a fancy keyboard company?
           </Heading>
         </Slide>
@@ -251,7 +259,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary" margin={10}>
-            Tames the meta-language
+            Tames meta-language
           </Heading>
         </Slide>
 
