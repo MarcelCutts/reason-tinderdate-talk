@@ -132,9 +132,15 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps >Reason is... </Heading>
-          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 📝 New syntax for OCaml</Heading>
-          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 🌊 Compiler workflow</Heading>
-          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 🛁 Docs, libs, utils</Heading>
+          <Appear>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 📝 New syntax for OCaml</Heading>
+          </Appear>
+          <Appear>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 🌊 Compiler workflow</Heading>
+          </Appear>
+          <Appear>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 🛁 Docs, libs, utils</Heading>
+          </Appear>
         </Slide>
 
         <Slide transition={["slide"]} bgImage={images.reasonTooling} />
