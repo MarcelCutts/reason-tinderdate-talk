@@ -1,0 +1,5 @@
+  getData()
+    .then(a => getMoreData(a))
+    .then(b => getMoreData(b))
+    .then(c => getMoreData(c))
+    .then(e => console.log(e));

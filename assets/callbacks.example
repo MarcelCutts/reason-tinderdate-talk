@@ -1,0 +1,9 @@
+getData(a => {
+  getMoreData(a, b => {
+    getMoreData(b, c => {
+      getMoreData(c, e => {
+        console.log(e);
+      })
+    })
+  })
+})

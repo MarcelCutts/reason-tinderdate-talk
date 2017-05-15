@@ -1,0 +1,13 @@
+"use strict";
+ var Int_map=require("./int_map.js");
+ function test() {
+   var m = /* Empty */0;
+   for(var i = 0; i <= 1000000; ++i){
+     m = add(i, i, m);
+   }
+   for(var j = 0; j <= 1000000; ++j){
+     find(j, m);
+  }
+  return /* () */0;
+}
+test(/* () */0);
