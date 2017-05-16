@@ -368,7 +368,7 @@ export default class Presentation extends React.Component {
             Create
           </Heading>
           <Heading fit caps textColor="tertiary">
-            Reaon React
+            Reason React
           </Heading>
           <Heading fit caps textColor="tertiary">
             App
