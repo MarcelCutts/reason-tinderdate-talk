@@ -41,7 +41,6 @@ const images = {
   whatsApp: require("../assets/whatsapp.svg"),
   erlang: require("../assets/erlang.png"),
   elixir: require("../assets/elixir.png"),
-  reasonCorner: require("../assets/reason-small.jpg"),
   bloombergKeyboard: require("../assets/bloomberg.jpg"),
   reasonReactLogo: require("../assets/reasonreact.png"),
   atomTypes: require("../assets/types.png"),
@@ -49,6 +48,8 @@ const images = {
   refmt: require("../assets/refmt.gif"),
   betterErrors: require("../assets/bettererrors.png"),
   seanGrove: require("../assets/seangrove.jpeg"),
+  mateusz: require("../assets/mateusz.png"),
+  beerChuck: require("../assets/beerchuck.jpg"),
   elm: require("../assets/elm.png"),
   lair: require("../assets/lair.jpg")
 };
@@ -170,7 +171,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading fit textColor="primary">Marcel, you absolute idiot</Heading>
           <Heading fit textColor="primary">OCaml</Heading>
-          <Heading fit textColor="primary">{`doesn't run in browsers`}</Heading>
+          <Heading fit textColor="primary">{"doesn't run in browsers"}</Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -342,6 +343,20 @@ export default class Presentation extends React.Component {
             lang="javascript"
             source={require("raw-loader!../assets/interop.example")}
           />
+        </Slide>
+
+        <Slide transition={["slide"]} bgImage={images.mateusz} className="interop" />
+
+        <Slide transition={["slide"]} bgImage={images.beerChuck} className="interop">
+          <Heading fit caps textColor="tertiary">
+            Create
+          </Heading>
+          <Heading fit caps textColor="tertiary">
+            React Reason
+          </Heading>
+          <Heading fit caps textColor="tertiary">
+            App
+          </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="tertiary">
