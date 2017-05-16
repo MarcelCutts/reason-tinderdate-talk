@@ -47,6 +47,7 @@ const images = {
   reasonTooling: require("../assets/reasontools.png"),
   refmt: require("../assets/refmt.gif"),
   betterErrors: require("../assets/bettererrors.png"),
+  unikernels: require("../assets/unikernels.png"),
   seanGrove: require("../assets/seangrove.jpeg"),
   mateusz: require("../assets/mateusz.png"),
   beerChuck: require("../assets/beerchuck.jpg"),
@@ -220,8 +221,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={10}>
-            OCaml is a typed language
+          <Heading fit caps textColor="tertiary">
+            OCaml is
+          </Heading>
+          <Heading fit caps textColor="tertiary">
+            typed
           </Heading>
           <Appear>
             <Heading size={6} textColor="tertiary" margin={10}>
@@ -249,9 +253,17 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit textColor="tertiary" margin={10}>
-            Human readable JS output (😱)
+          <Heading fit textColor="tertiary">
+            Human readable
           </Heading>
+          <Heading fit textColor="tertiary">
+            JS output
+          </Heading>
+          <Heading size={1} textColor="tertiary">
+             😱
+          </Heading>
+
+
         </Slide>
 
         <Slide transition={["slide"]} bgColor="#2d2d2d" className="compiled">
@@ -289,8 +301,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={10}>
-            Tames meta-language
+          <Heading fit caps textColor="tertiary">
+            Tames the
+          </Heading>
+          <Heading fit caps textColor="tertiary">
+            meta-language
           </Heading>
         </Slide>
 
@@ -322,6 +337,8 @@ export default class Presentation extends React.Component {
               ⚡️ Unikernels?! ⚡️
           </Heading>
         </Slide>
+
+        <Slide transition={["slide"]} bgImage={images.unikernels} />
 
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.reasonReactLogo} width="40%"/>
@@ -404,8 +421,11 @@ export default class Presentation extends React.Component {
 
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={"0 0 80px 0"} padding={"5px 0"}>
-            Thanks for listening!
+          <Heading fit caps textColor="tertiary">
+            Thanks
+          </Heading>
+          <Heading fit caps textColor="tertiary" margin={"0 0 80px 0"}>
+            for listening!
           </Heading>
           <Layout>
             <Fill>
