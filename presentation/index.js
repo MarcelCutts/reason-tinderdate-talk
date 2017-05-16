@@ -316,7 +316,6 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary" margin={10}>
             INSANE Reach
@@ -369,7 +368,7 @@ export default class Presentation extends React.Component {
             Create
           </Heading>
           <Heading fit caps textColor="tertiary">
-            React Reason
+            Reaon React
           </Heading>
           <Heading fit caps textColor="tertiary">
             App
