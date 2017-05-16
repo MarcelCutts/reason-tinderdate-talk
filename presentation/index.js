@@ -38,6 +38,9 @@ const images = {
   babelLogo: require("../assets/babel.png"),
   prettierLogo: require("../assets/prettier.png"),
   ocamlLogo: require("../assets/ocaml.png"),
+  whatsApp: require("../assets/whatsapp.svg"),
+  erlang: require("../assets/erlang.png"),
+  elixir: require("../assets/elixir.png"),
   reasonCorner: require("../assets/reason-small.jpg"),
   bloombergKeyboard: require("../assets/bloomberg.jpg"),
   reasonReactLogo: require("../assets/reasonreact.png"),
@@ -45,6 +48,7 @@ const images = {
   reasonTooling: require("../assets/reasontools.png"),
   refmt: require("../assets/refmt.gif"),
   betterErrors: require("../assets/bettererrors.png"),
+  seanGrove: require("../assets/seangrove.jpeg"),
   elm: require("../assets/elm.png"),
   lair: require("../assets/lair.jpg")
 };
@@ -145,6 +149,30 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgImage={images.reasonTooling} />
 
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading fit textColor="primary">Can an old language like </Heading>
+          <Heading fit textColor="primary">OCaml</Heading>
+          <Heading fit textColor="primary">be relevant to us now?</Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Image src={images.erlang} width="40%"/>
+          <Image src={images.elixir} width="40%" margin={"0 0 0 10%"}/>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="secondary">
+          <Image src={images.whatsApp} width="50%"/>
+          <Appear>
+            <Heading fit caps textColor="primary">$19 billion</Heading>
+          </Appear>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading fit textColor="primary">Marcel, you absolute idiot</Heading>
+          <Heading fit textColor="primary">OCaml</Heading>
+          <Heading fit textColor="primary">{`doesn't run in browsers`}</Heading>
+        </Slide>
+
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.bloombergKeyboard} width="100%"/>
           <Appear>
@@ -160,8 +188,8 @@ export default class Presentation extends React.Component {
           <Heading size={2}>JavaScript</Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={3} textAlign="left" textColor="tertiary" margin={10}>
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
             Why should I write JavaScript in a meta language for a 20 year old systems language that is compiled to JavaScript by a fancy keyboard company?
           </Heading>
         </Slide>
@@ -201,9 +229,7 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.atomTypes} height="100%"/>
-        </Slide>
+        <Slide transition={["slide"]} bgImage={images.atomTypes} />
 
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.babelLogo} width="100%"/>
@@ -213,16 +239,12 @@ export default class Presentation extends React.Component {
           <Heading size={5} caps textColor="tertiary" margin={10}>
             Bucklescript compiles
           </Heading>
-
           <Heading fit caps textColor="tertiary" margin={10}>
             10x faster
           </Heading>
-
-
           <Heading size={5} caps textColor="tertiary" margin={10}>
             than TypeScript
           </Heading>
-
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -245,15 +267,17 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
+        <Slide transition={["slide"]} bgColor="secondary">
+          <Image src={images.seanGrove} height="50%"/>
+          <Heading fit caps textColor="primary">@sgrove</Heading>
+        </Slide>
+
 
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.prettierLogo} height="100%"/>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.refmt} height="100%"/>
-        </Slide>
-
+        <Slide transition={["slide"]} bgImage={images.refmt} />
 
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.eslintLogo} height="400px"/>
@@ -333,14 +357,14 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={5} caps textColor="tertiary" margin={10} padding={"5px 0"}>
-            - Very immature
+          <Heading size={4} caps textAlign="left" textColor="tertiary" margin={10} padding={"5px 0"}>
+            👶 Very immature
           </Heading>
-          <Heading size={5} caps textColor="tertiary" margin={10} padding={"5px 0"}>
-            - Small ecosystem
+          <Heading size={4} caps textAlign="left" textColor="tertiary" margin={10} padding={"5px 0"}>
+            🌲 Small ecosystem
           </Heading>
-          <Heading size={5} caps textColor="tertiary" margin={10} padding={"5px 0"}>
-            - Systems community
+          <Heading size={4} caps textAlign="left" textColor="tertiary" margin={10} padding={"5px 0"}>
+            👩‍👩‍👧‍👧 Systems community
           </Heading>
         </Slide>
 
