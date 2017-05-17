@@ -361,9 +361,9 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["slide"]} bgImage={images.mateusz} className="interop" />
+        <Slide transition={["slide"]} bgImage={images.mateusz} />
 
-        <Slide transition={["slide"]} bgImage={images.beerChuck} className="interop">
+        <Slide transition={["slide"]} bgImage={images.beerChuck}>
           <Heading fit caps textColor="tertiary">
             Create
           </Heading>
@@ -372,6 +372,18 @@ export default class Presentation extends React.Component {
           </Heading>
           <Heading fit caps textColor="tertiary">
             App
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]}>
+          <Heading fit caps textColor="tertiary">
+            React Native?
+          </Heading>
+          <Heading fit caps textColor="tertiary" margin={"40px 0"}>
+            bs-react-native
+          </Heading>
+          <Heading size={4} caps textColor="tertiary">
+            (By @wokalski)
           </Heading>
         </Slide>
 
@@ -410,14 +422,6 @@ export default class Presentation extends React.Component {
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.elm} height="100%"/>
         </Slide>
-
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="primary" bgColor="tertiary" margin={10} padding={"5px 0"}>
-            Hire me
-          </Heading>
-        </Slide>
-
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary">
