@@ -379,11 +379,11 @@ export default class Presentation extends React.Component {
           <Heading fit caps textColor="tertiary">
             React Native?
           </Heading>
-          <Heading fit caps textColor="tertiary" margin={"40px 0"}>
+          <Heading fit caps textColor="primary" bgColor="tertiary" margin={"60px 0"}>
             bs-react-native
           </Heading>
-          <Heading size={4} caps bgColor="tertiary" textColor="primary">
-            (By @wokalski)
+          <Heading size={4} caps textColor="tertiary">
+            By @wokalski & @s_timme
           </Heading>
         </Slide>
 
