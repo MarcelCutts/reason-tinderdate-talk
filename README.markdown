@@ -1,4 +1,4 @@
-# A speed-date with ReasonML
+# A tinder date with ReasonML
 
 Slides accompanying my longer format talk introducing ReasonML, Reason-React, Create-Reason-React and more.
 
