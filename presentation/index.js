@@ -52,7 +52,10 @@ const images = {
   mateusz: require("../assets/mateusz.png"),
   beerChuck: require("../assets/beerchuck.jpg"),
   elm: require("../assets/elm.png"),
-  lair: require("../assets/lair.jpg")
+  lair: require("../assets/lair.jpg"),
+  number1: require("../assets/number1full.png"),
+  number2: require("../assets/number2full.png"),
+  deprecated: require("../assets/deprecated.png")
 };
 
 preloader(images);
@@ -149,7 +152,11 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgImage={images.reasonTooling} />
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={3} fit textColor="tertiary">Functional</Heading>
+          <Heading size={2} textColor="tertiary" margin={"50px 0 50px 0"}>BUT</Heading>
+          <Heading size={3} fit textColor="tertiary">Permissive</Heading>
+        </Slide>
 
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading fit textColor="primary">Can an old language like </Heading>
@@ -266,19 +273,9 @@ export default class Presentation extends React.Component {
 
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="#2d2d2d" className="compiled">
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/compiledoutput1.example")}
-          />
-        </Slide>
+        <Slide transition={["slide"]} bgImage={images.number1} className="compiled" />
 
-        <Slide transition={["slide"]} bgColor="#2d2d2d" className="compiled">
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/compiledoutput2.example")}
-          />
-        </Slide>
+        <Slide transition={["slide"]} bgImage={images.number2} className="compiled" />
 
         <Slide transition={["slide"]} bgColor="secondary">
           <Image src={images.seanGrove} height="50%"/>
@@ -296,8 +293,8 @@ export default class Presentation extends React.Component {
           <Image src={images.eslintLogo} height="400px"/>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.betterErrors} height="100%"/>
+        <Slide transition={["slide"]} bgColor="primary" margin={"-120px 0 0 -70px"}>
+          <Image src={images.betterErrors} height="900px" margin/>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -309,69 +306,21 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="#2d2d2d" className="dep">
-          <CodePane
-            lang="ocaml"
-            source={require("raw-loader!../assets/deprecation.example")}
-          />
-        </Slide>
+        <Slide transition={["slide"]} bgImage={images.deprecated} className="dep" />
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={10}>
-            INSANE Reach
+          <Heading fit caps textColor="tertiary">
+            Amazing
+          </Heading>
+          <Heading fit caps textColor="tertiary">
+            Interop
           </Heading>
         </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={10}>
-              X86/64! ARM!
-          </Heading>
-          <Heading fit caps textColor="tertiary" margin={10}>
-              Real native mobile dev!
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={10}>
-              ⚡️ Unikernels?! ⚡️
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgImage={images.unikernels} />
 
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.reasonReactLogo} width="40%"/>
           <Heading size={6} fit caps textColor="tertiary" margin={10}>
             Reason-React
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="#2d2d2d">
-          <CodePane
-            lang="ocaml"
-            source={require("raw-loader!../assets/reasonreact.example")}
-          />
-        </Slide>
-
-
-        <Slide transition={["slide"]} bgColor="#2d2d2d" className="interop">
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/interop.example")}
-          />
-        </Slide>
-
-        <Slide transition={["slide"]} bgImage={images.mateusz} />
-
-        <Slide transition={["slide"]} bgImage={images.beerChuck}>
-          <Heading fit caps textColor="tertiary">
-            Create
-          </Heading>
-          <Heading fit caps textColor="tertiary">
-            Reason React
-          </Heading>
-          <Heading fit caps textColor="tertiary">
-            App
           </Heading>
         </Slide>
 
@@ -387,23 +336,102 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading fit caps textColor="primary">
-            Should I use
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps textColor="tertiary" margin={10}>
+            INSANE Reach
           </Heading>
-          <Heading fit caps textColor="primary">
-            Reason
+          <Heading caps size={2} textColor="tertiary" margin={10}>
+            +
           </Heading>
-          <Heading fit caps textColor="primary">
-            right now?
+          <Heading caps fit textColor="tertiary" margin={10}>
+            Native compilation
           </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={10} padding={"5px 0"}>
-            Not yet...
+          <Heading size={1} caps textColor="tertiary" margin={10}>
+              x32/x64
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              💻 OCaml home turf
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              💻 Compile to system
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"}caps textColor="secondary" margin={10}>
+              💻 Interact with UI libs etc
           </Heading>
         </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps textColor="tertiary" margin={10}>
+              Mobile
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              📱 Compile to ARM
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              📱 Interop with ObjC libs etc
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps textColor="tertiary" margin={10}>
+              Mobile
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              📱 Compile to ARM
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              📱 Interop with ObjC libs etc
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              📱 Rad performance well suited
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps textColor="tertiary" margin={10}>
+              Embedded
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              🖲 Compile to ARM
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              🖲 Interop with... whatever
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              🖲 Rad performance well suited
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps textColor="tertiary" margin={10}>
+              ⚡️ Unikernels?! ⚡️
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgImage={images.unikernels} />
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps textColor="tertiary" margin={10}>
+              Unikernels
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              {"⚡️ <50ms boot time for VM"}
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              {"⚡️ 100KB - 10MB in size"}
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              ⚡️ 1000 - 1000 instances on 1 machine
+          </Heading>
+          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
+              ⚡️ Check each VM into Git!
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgImage={images.lair} />
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={3} caps textAlign="left" textColor="tertiary" margin={10} padding={"30px 0"}>
@@ -415,12 +443,6 @@ export default class Presentation extends React.Component {
           <Heading size={3} caps textAlign="left" textColor="tertiary" margin={10} padding={"30px 0"}>
             👩‍👩‍👧‍👧 New community
           </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgImage={images.lair} />
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.elm} height="100%"/>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
