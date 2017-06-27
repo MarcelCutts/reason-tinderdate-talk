@@ -55,7 +55,11 @@ const images = {
   lair: require("../assets/lair.jpg"),
   number1: require("../assets/number1full.png"),
   number2: require("../assets/number2full.png"),
-  deprecated: require("../assets/deprecated.png")
+  deprecated: require("../assets/deprecated.png"),
+  internetCensus: require("../assets/internetcensus.gif"),
+  livescript: require("../assets/livescript.png"),
+  typescript: require("../assets/typescript.png"),
+  purescript: require("../assets/purescript.png")
 };
 
 preloader(images);
@@ -176,6 +180,8 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
+        <Slide transition={["slide"]} bgImage={images.internetCensus} className="compiled" />
+
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading fit textColor="primary">Marcel, you absolute idiot</Heading>
           <Heading fit textColor="primary">OCaml</Heading>
@@ -269,8 +275,6 @@ export default class Presentation extends React.Component {
           <Heading size={1} textColor="tertiary">
              😱
           </Heading>
-
-
         </Slide>
 
         <Slide transition={["slide"]} bgImage={images.number1} className="compiled" />
@@ -373,20 +377,8 @@ export default class Presentation extends React.Component {
           <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
               📱 Interop with ObjC libs etc
           </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} caps textColor="tertiary" margin={10}>
-              Mobile
-          </Heading>
           <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
-              📱 Compile to ARM
-          </Heading>
-          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
-              📱 Interop with ObjC libs etc
-          </Heading>
-          <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
-              📱 Rad performance well suited
+              📱 Rad performance
           </Heading>
         </Slide>
 
@@ -401,7 +393,7 @@ export default class Presentation extends React.Component {
               🖲 Interop with... whatever
           </Heading>
           <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
-              🖲 Rad performance well suited
+              🖲 Rad performance
           </Heading>
         </Slide>
 
@@ -424,14 +416,13 @@ export default class Presentation extends React.Component {
               {"⚡️ 100KB - 10MB in size"}
           </Heading>
           <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
-              ⚡️ 1000 - 1000 instances on 1 machine
+              ⚡️ 10000 instances
           </Heading>
           <Heading size={5} textAlign="left" margin={"30px 0 0 50px"} caps textColor="secondary" margin={10}>
-              ⚡️ Check each VM into Git!
+              ⚡️ Each UK into Git!
           </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgImage={images.lair} />
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={3} caps textAlign="left" textColor="tertiary" margin={10} padding={"30px 0"}>
@@ -441,8 +432,29 @@ export default class Presentation extends React.Component {
             🌲 Small ecosystem
           </Heading>
           <Heading size={3} caps textAlign="left" textColor="tertiary" margin={10} padding={"30px 0"}>
-            👩‍👩‍👧‍👧 New community
+            👩‍ New community
           </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgImage={images.lair} />
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Layout>
+            <Fill>
+              <Image src={images.elm} height="250px"/>
+            </Fill>
+            <Fill>
+              <Image src={images.purescript} height="250px"/>
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Image src={images.typescript} height="250px"/>
+            </Fill>
+            <Fill>
+              <Image src={images.livescript} height="250px"/>
+            </Fill>
+          </Layout>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
