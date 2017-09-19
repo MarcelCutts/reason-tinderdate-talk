@@ -29,7 +29,6 @@ import createTheme from "spectacle/lib/themes/default";
 require("normalize.css");
 require("spectacle/lib/themes/default/index.css");
 
-
 const images = {
   reasonLogo: require("../assets/reason-logo.png"),
   twitterLogo: require("../assets/twitter-logo.png"),
@@ -59,26 +58,32 @@ const images = {
   internetCensus: require("../assets/internetcensus.gif"),
   livescript: require("../assets/livescript.png"),
   typescript: require("../assets/typescript.png"),
-  purescript: require("../assets/purescript.png")
+  purescript: require("../assets/purescript.png"),
+  reasonErrors: require("../assets/reasonerrors.png"),
+  reactErrors: require("../assets/react-errors.png"),
+  vsCodeEditor: require("../assets/vscode-editor.png"),
+  benchmarks: require("../assets/benchmarks.png")
 };
 
 preloader(images);
 
-const theme = createTheme({
-  primary: "white",
-  secondary: "#333333",
-  tertiary: "#db4d3f",
-  quartenary: "#CECECE"
-}, {
+const theme = createTheme(
+  {
+    primary: "white",
+    secondary: "#333333",
+    tertiary: "#db4d3f",
+    quartenary: "#CECECE"
+  },
+  {
     primary: "Montserrat",
     secondary: "Helvetica"
-  });
+  }
+);
 
 export default class Presentation extends React.Component {
   render() {
     return (
       <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
-
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.reasonLogo} width="100%" />
           <Layout>
@@ -96,24 +101,15 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="#2d2d2d">
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/callbacks.example")}
-          />
+          <CodePane lang="javascript" source={require("raw-loader!../assets/callbacks.example")} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="#2d2d2d">
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/promises.example")}
-          />
+          <CodePane lang="javascript" source={require("raw-loader!../assets/promises.example")} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="#2d2d2d">
-          <CodePane
-            lang="javascript"
-            source={require("raw-loader!../assets/async.example")}
-          />
+          <CodePane lang="javascript" source={require("raw-loader!../assets/async.example")} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -144,28 +140,39 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps >Reason is... </Heading>
+          <Heading fit caps>
+            Reason is...{" "}
+          </Heading>
           <Appear>
-            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 📝 New syntax for OCaml</Heading>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+              {" "}
+              📝 New syntax for OCaml
+            </Heading>
           </Appear>
           <Appear>
-            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 🌊 Compiler workflow</Heading>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+              {" "}
+              🌊 Compiler workflow
+            </Heading>
           </Appear>
           <Appear>
-            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}> 🛁 Docs, libs, utils</Heading>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+              {" "}
+              🛁 Docs, libs, utils
+            </Heading>
           </Appear>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={3} fit textColor="tertiary">Functional</Heading>
-          <Heading size={2} textColor="tertiary" margin={"50px 0 50px 0"}>BUT</Heading>
-          <Heading size={3} fit textColor="tertiary">Permissive</Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading fit textColor="primary">Can an old language like </Heading>
-          <Heading fit textColor="primary">OCaml</Heading>
-          <Heading fit textColor="primary">be relevant to us now?</Heading>
+          <Heading fit textColor="primary">
+            Can an old language like{" "}
+          </Heading>
+          <Heading fit textColor="primary">
+            OCaml
+          </Heading>
+          <Heading fit textColor="primary">
+            be relevant to us now?
+          </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -176,16 +183,22 @@ export default class Presentation extends React.Component {
         <Slide transition={["slide"]} bgColor="secondary">
           <Image src={images.whatsApp} width="50%" />
           <Appear>
-            <Heading fit caps textColor="primary">$19 billion</Heading>
+            <Heading fit caps textColor="primary">
+              $19 billion
+            </Heading>
           </Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgImage={images.internetCensus} className="compiled" />
-
         <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading fit textColor="primary">Marcel, you absolute idiot</Heading>
-          <Heading fit textColor="primary">OCaml</Heading>
-          <Heading fit textColor="primary">{"doesn't run in browsers"}</Heading>
+          <Heading fit textColor="primary">
+            Marcel, you absolute idiot
+          </Heading>
+          <Heading fit textColor="primary">
+            OCaml
+          </Heading>
+          <Heading fit textColor="primary">
+            {"doesn't run in browsers"}
+          </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -205,7 +218,17 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading size={3} textAlign="left" textColor="primary" margin={10}>
-            Why should I write JavaScript in a meta language for a 20 year old systems language that is compiled to JavaScript by a fancy keyboard company?
+            Why should I write JavaScript in a meta language for a 20 year old systems language that is compiled to
+            JavaScript by a fancy keyboard company?
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps textColor="tertiary" margin={10}>
+            Developer
+          </Heading>
+          <Heading fit caps textColor="tertiary">
+            experience
           </Heading>
         </Slide>
 
@@ -228,7 +251,6 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
 
-
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.flowLogo} height="100%" />
         </Slide>
@@ -247,7 +269,7 @@ export default class Presentation extends React.Component {
           </Appear>
         </Slide>
 
-        <Slide transition={["slide"]} bgImage={images.atomTypes} />
+        <Slide transition={["slide"]} bgImage={images.vsCodeEditor} />
 
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.babelLogo} width="100%" />
@@ -262,6 +284,22 @@ export default class Presentation extends React.Component {
           </Heading>
           <Heading size={5} caps textColor="tertiary" margin={10}>
             than TypeScript
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps textColor="tertiary" margin={10}>
+            Performant JS 🚀
+          </Heading>
+          <Image src={images.benchmarks} width="100%" />
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps textColor="tertiary">
+            Amazing
+          </Heading>
+          <Heading fit caps textColor="tertiary">
+            Interop
           </Heading>
         </Slide>
 
@@ -283,9 +321,10 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgColor="secondary">
           <Image src={images.seanGrove} height="50%" />
-          <Heading fit caps textColor="primary">@sgrove</Heading>
+          <Heading fit caps textColor="primary">
+            @sgrove
+          </Heading>
         </Slide>
-
 
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.prettierLogo} height="100%" />
@@ -297,9 +336,45 @@ export default class Presentation extends React.Component {
           <Image src={images.eslintLogo} height="400px" />
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary" margin={"-120px 0 0 -70px"}>
-          <Image src={images.betterErrors} height="900px" margin />
+        <Slide transition={["slide"]} bgImage={images.reasonErrors} className="dep" />
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps textColor="tertiary" margin={10}>
+            Language
+          </Heading>
+          <Heading fit caps textColor="tertiary">
+            features
+          </Heading>
         </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={3} fit textColor="tertiary">
+            Functional
+          </Heading>
+          <Heading size={2} textColor="tertiary" margin={"50px 0 50px 0"}>
+            BUT
+          </Heading>
+          <Heading size={3} fit textColor="tertiary">
+            Permissive
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} textColor="tertiary" >
+            Type Hype!
+          </Heading>
+          <Heading size={1} textColor="tertiary" margin={"50 0 0 0"}>
+          Pattern Matching!
+        </Heading>
+        </Slide>
+
+        {
+          // GQL example here?
+        }
+
+        {
+          // Mura masa - type, invarient, pattern matching
+        }
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary">
@@ -312,14 +387,6 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["slide"]} bgImage={images.deprecated} className="dep" />
 
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary">
-            Amazing
-          </Heading>
-          <Heading fit caps textColor="tertiary">
-            Interop
-          </Heading>
-        </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary" margin={10}>
@@ -404,7 +471,6 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-
         <Slide transition={["slide"]} bgColor={"tertiary"}>
           <Heading fit caps textColor="primary">
             Lets build some
@@ -414,12 +480,22 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        { // Docs are great now
+        {
+          // Docs are great now
           // Basic functino
           // every file is a module
           // get docs
         }
 
+        {
+          // Simple reaosn
+        }
+
+
+        {
+          // r
+        }
+{/*
         <Slide transition={["slide"]} bgColor={"primary"}>
           <Heading fit caps textColor="tertiary">
             You promised us
@@ -427,21 +503,22 @@ export default class Presentation extends React.Component {
           <Heading fit caps textColor="tertiary">
             Interop!
           </Heading>
-        </Slide>
+        </Slide> */}
 
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.reasonReactLogo} width="40%" />
           <Heading size={6} fit caps textColor="tertiary" margin={10}>
-            Reason-React
+            Reason-React Scripts
           </Heading>
         </Slide>
 
+
         {
-          // Basic component
+          // Interop both ways
           // Show stateless and stateful
         }
 
-
+{/*
         <Slide transition={["slide"]} bgImage={images.beerChuck}>
           <Heading fit caps textColor="tertiary">
             Create
@@ -452,12 +529,10 @@ export default class Presentation extends React.Component {
           <Heading fit caps textColor="tertiary">
             App
           </Heading>
-        </Slide>
-
+        </Slide> */}
 
         {
           // Boo
-
           // But reason-react examples are great
         }
 
@@ -477,13 +552,11 @@ export default class Presentation extends React.Component {
           // Babel Reason
         }
 
-
         <Slide transition={["slide"]} bgColor={"primary"}>
           <Heading fit caps textColor="tertiary">
             One more thing...
           </Heading>
         </Slide>
-
 
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading fit caps textColor="primary">
@@ -497,6 +570,10 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
+        {
+          //  50% of messenger.com reason. companies us it. BUT
+          // discord based dev
+        }
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={3} caps textAlign="left" textColor="tertiary" margin={10} padding={"30px 0"}>
