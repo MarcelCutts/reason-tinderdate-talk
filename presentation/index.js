@@ -56,7 +56,9 @@ const images = {
   reasonErrors: require("../assets/reasonerrors.png"),
   reactErrors: require("../assets/react-errors.png"),
   vsCodeEditor: require("../assets/vscode-editor.png"),
-  benchmarks: require("../assets/benchmarks.png")
+  benchmarks: require("../assets/benchmarks.png"),
+  bsLogo: require("../assets/bs-logo.png"),
+  reLogo: require("../assets/reasonlogo.jpg")
 };
 
 const videos = {
@@ -85,37 +87,37 @@ export default class Presentation extends React.Component {
         <Slide className="full-screen">
           <video autoPlay loop src={videos.synth} />
           <div>
-          <Image src={images.reasonLogo} width="100%" />
-          <Layout>
-            <Fill>
-              <Heading
-                size={6}
-                caps
-                textColor="primary"
-                bgColor="tertiary"
-                margin={10}
-                padding={"5px 0"}
-              >
-                Marcel Cutts
-              </Heading>
-            </Fill>
-            <Fill>
-              <Heading
-                size={6}
-                caps
-                textColor="primary"
-                bgColor="tertiary"
-                margin={10}
-                padding={"5px 0"}
-              >
-                @marcelcutts{" "}
-                <Image
-                  src={images.twitterLogo}
-                  height="30px"
-                  margin="3px 0 0 0"
-                />
-              </Heading>
-            </Fill>
+            <Image src={images.reasonLogo} width="100%" />
+            <Layout>
+              <Fill>
+                <Heading
+                  size={6}
+                  caps
+                  textColor="primary"
+                  bgColor="tertiary"
+                  margin={10}
+                  padding={"5px 0"}
+                >
+                  Marcel Cutts
+                </Heading>
+              </Fill>
+              <Fill>
+                <Heading
+                  size={6}
+                  caps
+                  textColor="primary"
+                  bgColor="tertiary"
+                  margin={10}
+                  padding={"5px 0"}
+                >
+                  @marcelcutts{" "}
+                  <Image
+                    src={images.twitterLogo}
+                    height="30px"
+                    margin="3px 0 0 0"
+                  />
+                </Heading>
+              </Fill>
             </Layout>
           </div>
         </Slide>
@@ -272,7 +274,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          Now independent
+          <Image src={images.bsLogo} height={"100%"} />
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -283,20 +285,133 @@ export default class Presentation extends React.Component {
           <Heading size={2}>JavaScript</Heading>
         </Slide>
 
+        <Slide>
+          | Demo installable | "I'm not joking, this is a real thing you can do"
+          | bs platform install | basic project | show round | write a thing |
+          run in node
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading fit caps textColor="primary" margin={10}>
+            OK, you can...
+          </Heading>
+        </Slide>
+
+        <Slide bgColor="tertiary">
+          <Heading fit caps textColor="primary" margin={10}>
+            but
+          </Heading>
+        </Slide>
+
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading size={3} textAlign="left" textColor="primary" margin={10}>
-            Why should I write JavaScript in a meta language for a 20 year old
+            Why should I write applications in a meta language for a 20 year old
             systems language that is compiled to JavaScript by a fancy keyboard
             company?
           </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          POWER COUPLE
+          <Layout>
+            <Fill>
+              <Image src={images.bsLogo} width="80%" />
+            </Fill>
+            <Fill>
+              <Image src={images.reLogo} width="80%" />
+            </Fill>
+          </Layout>
+          <Heading fit caps margin={"50px 0 0 0"}>
+            POWER COUPLE
+          </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          why ocaml over otherthings functinal but permission
+          <Heading fit caps>
+            Why bother?
+          </Heading>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              ⚡️ Lightning compilation
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              🏎 Incredibly performant JS
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              📝 Editor integration bliss
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              🐜 Tiny bundle sizes
+            </Heading>
+          </Appear>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading fit caps>
+            Why bother?
+          </Heading>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              🤔 Staggering type inference
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              💥 Destruction of null
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              🔊 100% type sound
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              🤝 Joyful interop
+            </Heading>
+          </Appear>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading fit caps>
+            Why bother?
+          </Heading>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              🖲 Native compilation
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              ⛑ Saviour errors
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              😴 Sleeping 8 hours a night
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading caps size={5} textAlign="left" margin={"30px 0 0 50px"}>
+              🚲 Hipster cred
+            </Heading>
+          </Appear>
+        </Slide>
+
+        {
+          // goal is to make people feel excited
+          // and confident we can actually
+          // really use this
+        }
+
+        <Slide transition={["slide"]} bgColor="primary">
+          why ocaml over otherthings | functinal but permission | basic syntax
+          es6 friend
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -308,28 +423,34 @@ export default class Presentation extends React.Component {
 
         <Slide>Data structures first</Slide>
 
-        <Slide>How stuff can mess up | TDD wont save you except if you do fuzzy testing</Slide>
+        <Slide>
+          How stuff can mess up | TDD wont save you except if you do fuzzy
+          testing
+        </Slide>
 
         <Slide>
           terminal project BS config codelens Simple counter example Hindley
-          errors "and remember, we have all this stuff just to emulate a poor version of this"
+          errors "and remember, we have all this stuff just to emulate a poor
+          version of this"
         </Slide>
 
-        <Slide>more insidious varients?</Slide>
+        <Slide>more insidious varients are cool, not just a string?</Slide>
 
         <Slide>types security, gooness, happiness Haskell</Slide>
-
 
         <Slide>bucklescript</Slide>
 
         <Slide>performance compile ties human readable interop</Slide>
 
-        <Slide>Summarise destruction</Slide>
+        <Slide>Summarise ticking off four managerie ecosystem things</Slide>
         <Slide>Reason react</Slide>
 
         <Slide>Brownfield reaosn-babl reasonably typed bsloader</Slide>
         <Slide>Native</Slide>
 
+        <Slide>One more thung....s</Slide>
+
+        <Slide>FAQs</Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary" margin={10}>
@@ -510,7 +631,6 @@ export default class Presentation extends React.Component {
           bgImage={images.deprecated}
           className="dep"
         />
-
 
         <Slide>One more thing....</Slide>
 
@@ -728,7 +848,6 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-
         {/*
         <Slide transition={["slide"]} bgImage={images.beerChuck}>
           <Heading fit caps textColor="tertiary">
@@ -891,8 +1010,10 @@ export default class Presentation extends React.Component {
           // patterns yet to be establish
           // erorrs not super helpful
           // assumed knowelge
+          // types not super helpful sometimes
+          // wtf is unit
+          // wtf is this error
         }
-
 
         {
           // Somehing important here
