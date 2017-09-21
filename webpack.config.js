@@ -49,13 +49,6 @@ module.exports = {
         include: __dirname
       },
       {
-        test: /\.(webm|mp4)$/,
-        loader: 'file-loader',
-        query: {
-          name: 'videos/[name].[hash:7].[ext]'
-        }
-      },
-      {
         test: /\.css$/,
         loaders: ['style-loader', 'raw-loader'],
         include: __dirname
@@ -79,7 +72,14 @@ module.exports = {
         test: /\.jpe?g$/,
         loader: 'url-loader?mimetype=image/jpg',
         include: path.join(__dirname, 'assets')
-      }
+      },
+      {
+        test: /\.(webm|mp4)$/,
+        loader: 'file-loader',
+        query: {
+          name: 'videos/[name].[hash:7].[ext]'
+        }
+      },
     ]
   }
 };

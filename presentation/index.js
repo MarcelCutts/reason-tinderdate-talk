@@ -86,40 +86,6 @@ export default class Presentation extends React.Component {
       <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
         <Slide className="full-screen">
           <video autoPlay loop src={videos.synth} />
-          <div>
-            <Image src={images.reasonLogo} width="100%" />
-            <Layout>
-              <Fill>
-                <Heading
-                  size={6}
-                  caps
-                  textColor="primary"
-                  bgColor="tertiary"
-                  margin={10}
-                  padding={"5px 0"}
-                >
-                  Marcel Cutts
-                </Heading>
-              </Fill>
-              <Fill>
-                <Heading
-                  size={6}
-                  caps
-                  textColor="primary"
-                  bgColor="tertiary"
-                  margin={10}
-                  padding={"5px 0"}
-                >
-                  @marcelcutts{" "}
-                  <Image
-                    src={images.twitterLogo}
-                    height="30px"
-                    margin="3px 0 0 0"
-                  />
-                </Heading>
-              </Fill>
-            </Layout>
-          </div>
         </Slide>
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.reasonLogo} width="100%" />
@@ -404,24 +370,104 @@ export default class Presentation extends React.Component {
         </Slide>
 
         {
+          // What does ML stand for again?
+        }
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Layout>
+            <Fill>
+              <Image src={images.elm} height="250px" />
+            </Fill>
+            <Fill>
+              <Image src={images.purescript} height="250px" />
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Image src={images.typescript} height="250px" />
+            </Fill>
+            <Fill>
+              <Image src={images.livescript} height="250px" />
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>coffeescript</Fill>
+            <Fill>clojurescript</Fill>
+          </Layout>
+        </Slide>
+
+        <Slide>Why ocaml, not such an odd duck</Slide>
+
+        <Slide>So what's writing reasonml actually like</Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={3} fit textColor="tertiary">
+            Functional
+          </Heading>
+          <Heading size={2} textColor="tertiary" margin={"50px 0 50px 0"}>
+            BUT
+          </Heading>
+          <Heading size={3} fit textColor="tertiary">
+            Permissive
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit textColor="tertiary">
+            ReasonML
+          </Heading>
+          <Heading size={1} textColor="tertiary" margin={"50px 0 50px 0"}>
+            ❤️
+          </Heading>
+          <Heading fit textColor="tertiary">
+            ECMAScript 201x
+          </Heading>
+        </Slide>
+
+        <Slide>Basic syntax</Slide>
+
+        {
           // goal is to make people feel excited
           // and confident we can actually
           // really use this
         }
 
+        {
+          // BUT HOW DO WE ACHIEVE ALL THESE INCREDIBLE THINGS AS ADVERTISED
+        }
+
         <Slide transition={["slide"]} bgColor="primary">
-          why ocaml over otherthings | functinal but permission | basic syntax
-          es6 friend
+          <Heading fit textColor="tertiary">
+            TYPE
+          </Heading>
+          <Heading fit textColor="tertiary" margin={"50px 0 50px 0"}>
+            HYPE
+          </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          TYPES performance bundle size targeting platforms compilation speed
-          interop free fixie bicycle adoration ... structural typing not classes
+          <Layout>
+            <Fill>
+              <Image src={images.flowLogo} width="90%" />
+            </Fill>
+            <Fill>
+              <Image src={images.typescript} width="90%" />
+            </Fill>
+          </Layout>
         </Slide>
 
-        <Slide>Type hype - better than TS flow in Ocaml</Slide>
-
-        <Slide>Data structures first</Slide>
+        {
+          // two houses alike in dignity
+          // it all comes back to types
+          // types arent classes here
+          // type systems and engines  differnet
+          // flow written in ocaml
+          // TS, dev exp, NOT type sound, cannot compete
+          // flow, addon, so it has flaws also
+          // Not just feature ticking
+          // data structures first <- slide
+          // type in, out, great
+        }
 
         <Slide>
           How stuff can mess up | TDD wont save you except if you do fuzzy
@@ -434,15 +480,157 @@ export default class Presentation extends React.Component {
           version of this"
         </Slide>
 
+        {
+          // 1. Simple example
+          // 2. do in reason
+          // 3. force fail - boom and suggest
+          // 4. tic tac toe
+          // 5. external
+          // 5. Contact email
+        }
+
+        {
+          // language lets you write in es6 in a lot of ways
+          // but gives you phenomoinal tools to enchance
+        }
+
         <Slide>more insidious varients are cool, not just a string?</Slide>
 
         <Slide>types security, gooness, happiness Haskell</Slide>
 
         <Slide>bucklescript</Slide>
 
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading fit textAlign="left" textColor="primary" margin={10}>
+            Hey! You promised
+          </Heading>
+          <Heading fit textAlign="left" textColor="primary" margin={10}>
+            more
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Image src={images.bsLogo} height={"100%"} />
+        </Slide>
+
+        {
+          // Type soundnesss allows all kinds of craziness
+        }
+
+        {}
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
+            OCaml compiles fast
+          </Heading>
+          Tweet here
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
+            BS does too
+          </Heading>
+          ????
+        </Slide>
+
+        {
+          // OCAML obssessive about speed
+        }
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
+            Perforomance - clever tricks
+          </Heading>
+          ????
+        </Slide>
+
+        <Slide>BSB vid here</Slide>
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
+            Perforomance - clever tricks
+          </Heading>
+          ????
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Layout>
+            <Fill>JS image</Fill>
+            <Fill>reason image</Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Layout>
+            <Fill>JS image</Fill>
+            <Fill>now-js image</Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Layout>
+            <Fill>Speed/Size</Fill>
+            <Fill>Speed/Size</Fill>
+          </Layout>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit textColor="tertiary">
+            Human readable
+          </Heading>
+          <Heading fit textColor="tertiary">
+            JS output
+          </Heading>
+          <Heading size={1} textColor="tertiary">
+            😱
+          </Heading>
+        </Slide>
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.number1}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.number2}
+          className="compiled"
+        />
+
+        <Slide transition={["slide"]} bgColor="secondary">
+          <Image src={images.seanGrove} height="50%" />
+          <Heading fit caps textColor="primary">
+            @sgrove
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="secondary">
+          <Heading fit caps textColor="primary">
+            Interop
+          </Heading>
+        </Slide>
+
+        {
+          // poeple design these fantastic systesm
+          // amazing idea
+          // but interop is maybe the most important
+          // BS FFI is really, really good and useable
+          // Other JS, the DOM etc
+        }
+
+        <Slide>In JS? Compile to JS, bundle it all in. </Slide>
+
+        <Slide>But what if you want to touch something outside the magic type garden?</Slide>
+
+
         <Slide>performance compile ties human readable interop</Slide>
 
         <Slide>Summarise ticking off four managerie ecosystem things</Slide>
+
+        {
+          // reason originally in sml
+        }
         <Slide>Reason react</Slide>
 
         <Slide>Brownfield reaosn-babl reasonably typed bsloader</Slide>
