@@ -14,8 +14,10 @@
   "license": "MIT",
   "dependencies": {
     "normalize.css": "3.0.3",
+    "prop-types": "^15.5.10",
     "react": "15.4.2",
     "react-dom": "15.4.2",
+    "react-tweet-embed": "^1.0.8",
     "spectacle": "2.0.0",
     "spectacle-code-slide": "^0.4.0"
   },

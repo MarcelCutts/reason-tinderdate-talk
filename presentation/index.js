@@ -9,6 +9,7 @@ import {
   Text,
   Layout,
   Fill,
+  Notes,
   CodePane,
   Image,
   Appear
@@ -58,7 +59,40 @@ const images = {
   vsCodeEditor: require("../assets/vscode-editor.png"),
   benchmarks: require("../assets/benchmarks.png"),
   bsLogo: require("../assets/bs-logo.png"),
-  reLogo: require("../assets/reasonlogo.jpg")
+  reLogo: require("../assets/reasonlogo.jpg"),
+  p1: require("../assets/placeholders/1.png"),
+  p2: require("../assets/placeholders/2.png"),
+  p3: require("../assets/placeholders/3.png"),
+  p4: require("../assets/placeholders/4.png"),
+  p5: require("../assets/placeholders/5.png"),
+  p6: require("../assets/placeholders/6.png"),
+  p7: require("../assets/placeholders/7.png"),
+  p8: require("../assets/placeholders/8.png"),
+  p9: require("../assets/placeholders/9.png"),
+  p10: require("../assets/placeholders/10.png"),
+  p11: require("../assets/placeholders/11.png"),
+  p12: require("../assets/placeholders/12.png"),
+  p13: require("../assets/placeholders/13.png"),
+  reFn: require("../assets/refn.png"),
+  jsFn: require("../assets/jsfn.png"),
+  cljsLogo: require("../assets/cljslogo.svg"),
+  coffeeLogo: require("../assets/coffeelogo.png"),
+  perfTweet: require("../assets/perfTweet.png"),
+  smsjs: require("../assets/placeholders/smsjs2.png"),
+  smsre: require("../assets/placeholders/recontentcheck.png"),
+  refrom: require("../assets/placeholders/refrrom.png"),
+  undefjs: require("../assets/placeholders/smsundefined.png"),
+  undefre: require("../assets/placeholders/resenderlocation.png"),
+  undefrem: require("../assets/placeholders/reoverload.png"),
+  vac: require("../assets/placeholders/vac.png"),
+  g1: require("../assets/gig/1.png"),
+  g2: require("../assets/gig/2.png"),
+  g3: require("../assets/gig/3.png"),
+  g5: require("../assets/gig/5.png"),
+  g6: require("../assets/gig/6.png"),
+  g7: require("../assets/gig/7.png"),
+  g8: require("../assets/gig/8.png"),
+  ojcompare: require("../assets/ojcompare.png")
 };
 
 const videos = {
@@ -232,7 +266,8 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="primary">
+
+        <Slide transition={["slide"]} bgColor="primary" notes={"testing"}>
           <Image src={images.bloombergKeyboard} width="100%" />
           <Appear>
             <Heading size={2}>Bucklescript</Heading>
@@ -251,11 +286,79 @@ export default class Presentation extends React.Component {
           <Heading size={2}>JavaScript</Heading>
         </Slide>
 
-        <Slide>
-          | Demo installable | "I'm not joking, this is a real thing you can do"
-          | bs platform install | basic project | show round | write a thing |
-          run in node
-        </Slide>
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p1}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p2}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p3}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p4}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p7}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p8}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p13}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p9}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p10}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p11}
+          className="compiled"
+        />
+
+        <Slide
+          transition={["slide"]}
+          bgImage={images.p12}
+          className="compiled"
+        />
+
+        {
+          // <Slide>
+          //   | Demo installable | "I'm not joking, this is a real thing you can do"
+          //   | bs platform install | basic project | show round | write a thing |
+          //   run in node
+          // </Slide>
+        }
 
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading fit caps textColor="primary" margin={10}>
@@ -381,6 +484,9 @@ export default class Presentation extends React.Component {
             <Fill>
               <Image src={images.purescript} height="250px" />
             </Fill>
+            <Fill>
+              <Image src={images.coffeeLogo} height="250px" />
+            </Fill>
           </Layout>
           <Layout>
             <Fill>
@@ -389,16 +495,35 @@ export default class Presentation extends React.Component {
             <Fill>
               <Image src={images.livescript} height="250px" />
             </Fill>
-          </Layout>
-          <Layout>
-            <Fill>coffeescript</Fill>
-            <Fill>clojurescript</Fill>
+            <Fill>
+              <Image src={images.cljsLogo} height="250px" />
+            </Fill>
           </Layout>
         </Slide>
 
-        <Slide>Why ocaml, not such an odd duck</Slide>
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={3} textColor="tertiary">
+            OCaml + Type Erasure
+          </Heading>
+          <Heading size={2} textColor="tertiary" margin={"50px 0 50px 0"}>
+            ≈
+          </Heading>
+          <Heading size={3} textColor="tertiary">
+            JavaScript
+          </Heading>
+        </Slide>
 
-        <Slide>So what's writing reasonml actually like</Slide>
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={3} caps textColor="primary">
+            What's writing in
+          </Heading>
+          <Heading fit caps textColor="primary">
+            ReasonML
+          </Heading>
+          <Heading size={3} caps textColor="primary">
+            actually like?
+          </Heading>
+        </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading size={3} fit textColor="tertiary">
@@ -417,14 +542,12 @@ export default class Presentation extends React.Component {
             ReasonML
           </Heading>
           <Heading size={1} textColor="tertiary" margin={"50px 0 50px 0"}>
-            ❤️
+            {"<3"}
           </Heading>
           <Heading fit textColor="tertiary">
             ECMAScript 201x
           </Heading>
         </Slide>
-
-        <Slide>Basic syntax</Slide>
 
         {
           // goal is to make people feel excited
@@ -440,7 +563,7 @@ export default class Presentation extends React.Component {
           <Heading fit textColor="tertiary">
             TYPE
           </Heading>
-          <Heading fit textColor="tertiary" margin={"50px 0 50px 0"}>
+          <Heading fit textColor="tertiary">
             HYPE
           </Heading>
         </Slide>
@@ -456,6 +579,20 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
 
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps>
+            The gig
+          </Heading>
+        </Slide>
+
+        <Slide bgImage={images.g1} />
+        <Slide bgImage={images.g2} />
+        <Slide bgImage={images.g3} />
+        <Slide bgImage={images.g5} />
+        <Slide bgImage={images.g6} />
+        <Slide bgImage={images.g7} />
+        <Slide bgImage={images.g8} />
+
         {
           // two houses alike in dignity
           // it all comes back to types
@@ -469,16 +606,78 @@ export default class Presentation extends React.Component {
           // type in, out, great
         }
 
-        <Slide>
-          How stuff can mess up | TDD wont save you except if you do fuzzy
-          testing
+        {
+          // <Slide>
+          //   How stuff can mess up | TDD wont save you except if you do fuzzy
+          //   testing
+          // </Slide>
+        }
+
+        <Slide transition={["slide"]} bgColor="tertiary">
+          <Heading size={6} caps fit textColor="primary" margin={10}>
+            Why
+          </Heading>
+          <Heading size={6} caps fit textColor="primary" margin={10}>
+            bother?
+          </Heading>
         </Slide>
 
-        <Slide>
-          terminal project BS config codelens Simple counter example Hindley
-          errors "and remember, we have all this stuff just to emulate a poor
-          version of this"
+        {
+          // Already so much effort is put into making code good
+          // flow, lint, ci, automated testing, fuzzy testsing
+          // this is better smarter safer
+          // unreasonable states impossile
+        }
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps textColor="tertiary" margin="10px 0">
+            Common JS
+          </Heading>
+          <Heading fit caps textColor="tertiary" margin="10px 0">
+            Pitfalls
+          </Heading>
         </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps textColor="tertiary">
+            1.
+          </Heading>
+          <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
+            Runtime 💥
+          </Heading>
+        </Slide>
+
+        <Slide bgImage={images.smsjs} />
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps textColor="tertiary">
+            2.
+          </Heading>
+          <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
+            Passing undefined 💥
+          </Heading>
+        </Slide>
+
+        <Slide bgImage={images.undefjs} />
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps textColor="tertiary">
+            3.
+          </Heading>
+          <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
+            Twisted logic 💥
+          </Heading>
+        </Slide>
+
+        <Slide bgImage={images.vac} />
+
+        {
+          // <Slide>
+          //   terminal project BS config codelens Simple counter example Hindley
+          //   errors "and remember, we have all this stuff just to emulate a poor
+          //   version of this"
+          // </Slide>
+        }
 
         {
           // 1. Simple example
@@ -494,17 +693,17 @@ export default class Presentation extends React.Component {
           // but gives you phenomoinal tools to enchance
         }
 
-        <Slide>more insidious varients are cool, not just a string?</Slide>
-
-        <Slide>types security, gooness, happiness Haskell</Slide>
-
-        <Slide>bucklescript</Slide>
+        {
+          // <Slide>more insidious varients are cool, not just a string?</Slide>
+          // <Slide>types security, gooness, happiness Haskell</Slide>
+          // <Slide>bucklescript</Slide>
+        }
 
         <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading fit textAlign="left" textColor="primary" margin={10}>
+          <Heading fit caps textColor="primary" margin={10}>
             Hey! You promised
           </Heading>
-          <Heading fit textAlign="left" textColor="primary" margin={10}>
+          <Heading fit caps textColor="primary" margin={10}>
             more
           </Heading>
         </Slide>
@@ -517,61 +716,114 @@ export default class Presentation extends React.Component {
           // Type soundnesss allows all kinds of craziness
         }
 
-        {}
-
-        <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
-            OCaml compiles fast
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={5} caps textColor="tertiary" margin={10}>
+            Bucklescript compiles
           </Heading>
-          Tweet here
+          <Heading fit caps textColor="tertiary" margin={10}>
+            10x faster
+          </Heading>
+          <Heading size={5} caps textColor="tertiary" margin={10}>
+            than TypeScript
+          </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
-            BS does too
-          </Heading>
-          ????
-        </Slide>
+        <Slide transition={["slide"]} bgImage={images.perfTweet} />
 
         {
           // OCAML obssessive about speed
         }
 
-        <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
-            Perforomance - clever tricks
-          </Heading>
-          ????
-        </Slide>
-
         <Slide>BSB vid here</Slide>
 
+        <Slide transition={["fade"]} bgImage={images.ojcompare} />
+
+        <Slide
+          transition={["fade"]}
+          bgImage={images.ojcompare}
+          maxWidth={window.innerWidth}
+          maxHeight={window.innerHeight}
+        >
+          <Layout>
+            <Fill>
+              <Heading textColor="primary" size={3} margin="50% 50px 0 0">
+                3415 ms
+              </Heading>
+            </Fill>
+            <Fill>
+              <Heading textColor="primary" size={3} margin="50% 0 0 50px">
+                1186 ms
+              </Heading>
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide
+          transition={["fade"]}
+          bgImage={images.ojcompare}
+          maxWidth={window.innerWidth}
+          maxHeight={window.innerHeight}
+        >
+          <Layout>
+            <Fill>
+              <Heading textColor="primary" size={3} margin="50% 50px 0 0">
+                3415 ms
+              </Heading>
+              <Heading textColor="primary" size={3} margin="50px 50px 0 0">
+                55.3K Bytes
+              </Heading>
+            </Fill>
+            <Fill>
+              <Heading textColor="primary" size={3} margin="50% 0 0 50px">
+                1186 ms
+              </Heading>
+              <Heading textColor="primary" size={3} margin="50px 0 0  50px">
+                899 bytes
+              </Heading>
+            </Fill>
+          </Layout>
+        </Slide>
+
         <Slide transition={["slide"]} bgColor="tertiary">
-          <Heading size={3} textAlign="left" textColor="primary" margin={10}>
-            Perforomance - clever tricks
+          <Heading fit caps textColor="primary" margin={10}>
+            HOW‽
           </Heading>
-          ????
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="tertiary">
-          <Layout>
-            <Fill>JS image</Fill>
-            <Fill>reason image</Fill>
-          </Layout>
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps>
+            Performance
+          </Heading>
+
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+            Compile expressio
+          </Heading>
+
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+            Variants O(1) branching
+          </Heading>
+
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+            Index lookups
+          </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="tertiary">
-          <Layout>
-            <Fill>JS image</Fill>
-            <Fill>now-js image</Fill>
-          </Layout>
-        </Slide>
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading size={1} caps>
+            Filesize
+          </Heading>
 
-        <Slide transition={["slide"]} bgColor="tertiary">
-          <Layout>
-            <Fill>Speed/Size</Fill>
-            <Fill>Speed/Size</Fill>
-          </Layout>
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+            Dead code elmiintation
+          </Heading>
+
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+            Pure functions
+          </Heading>
+
+          <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+            Linkers/bundlers
+          </Heading>
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
@@ -605,8 +857,8 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["slide"]} bgColor="secondary">
-          <Heading fit caps textColor="primary">
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps textColor="tertiary">
             Interop
           </Heading>
         </Slide>
@@ -621,8 +873,9 @@ export default class Presentation extends React.Component {
 
         <Slide>In JS? Compile to JS, bundle it all in. </Slide>
 
-        <Slide>But what if you want to touch something outside the magic type garden?</Slide>
-
+        <Slide>
+          But what if you want to touch something outside the magic type garden?
+        </Slide>
 
         <Slide>performance compile ties human readable interop</Slide>
 
