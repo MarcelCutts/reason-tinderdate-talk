@@ -983,8 +983,6 @@ export default class Presentation extends React.Component {
           // Other JS, the DOM etc
           // raw to bail you out
         }
-        <Slide>performance compile ties human readable interop</Slide>
-        <Slide>Summarise ticking off four managerie ecosystem things</Slide>
         {
           // reason originally in sml
         }
