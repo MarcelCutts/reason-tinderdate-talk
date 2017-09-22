@@ -9,7 +9,6 @@ import {
   Text,
   Layout,
   Fill,
-  Notes,
   CodePane,
   Image,
   Appear
@@ -92,7 +91,16 @@ const images = {
   g6: require("../assets/gig/6.png"),
   g7: require("../assets/gig/7.png"),
   g8: require("../assets/gig/8.png"),
-  ojcompare: require("../assets/ojcompare.png")
+  ojcompare: require("../assets/ojcompare.png"),
+  exPiz: require("../assets/externals/pi.png"),
+  exPizLabels: require("../assets/externals/pilabel.png"),
+  addModule: require("../assets/externals/externaljs.png"),
+  addModuleRe: require("../assets/externals/externalre.png"),
+  reinjs1: require("../assets/externals/reinjs1.png"),
+  reinjs2: require("../assets/externals/reinjs2.png"),
+  reinjs3: require("../assets/externals/reinjs3.png"),
+  webpacklogo: require("../assets/webpacklogo.png"),
+  reimport: require("../assets/directimport.png")
 };
 
 const videos = {
@@ -265,7 +273,6 @@ export default class Presentation extends React.Component {
             {"doesn't run in browsers"}
           </Heading>
         </Slide>
-
 
         <Slide transition={["slide"]} bgColor="primary" notes={"testing"}>
           <Image src={images.bloombergKeyboard} width="100%" />
@@ -587,7 +594,12 @@ export default class Presentation extends React.Component {
 
         <Slide bgImage={images.g1} />
         <Slide bgImage={images.g2} />
-        <Slide bgImage={images.g3} />
+        <Slide
+          bgImage={images.g3}
+          notes={
+            "where you fucked up, how you fucked up, and how to unfuck yourself"
+          }
+        />
         <Slide bgImage={images.g5} />
         <Slide bgImage={images.g6} />
         <Slide bgImage={images.g7} />
@@ -863,19 +875,112 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
+        <Slide transition={["slide"]} bgColor="primary">
+          <Layout>
+            <Fill>
+              <Image src={images.elm} height="250px" />
+            </Fill>
+            <Fill>
+              <Image src={images.purescript} height="250px" />
+            </Fill>
+            <Fill>
+              <Image src={images.coffeeLogo} height="250px" />
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Image src={images.typescript} height="250px" />
+            </Fill>
+            <Fill>
+              <Image src={images.livescript} height="250px" />
+            </Fill>
+            <Fill>
+              <Image src={images.cljsLogo} height="250px" />
+            </Fill>
+          </Layout>
+        </Slide>
+
+        <Slide
+          transition={["slide"]}
+          bgColor="primary"
+          notes={"bucklescripts FFI"}
+        >
+          <Heading fit>JS in RE</Heading>
+        </Slide>
+
+        <Slide bgImage={images.exPiz} />
+        <Slide bgImage={images.exPizLabels} />
+        <Slide bgImage={images.addModule} />
+        <Slide bgImage={images.addModuleRe} />
+        <Slide bgImage={images.reasonablyTyped} />
+        <Slide bgImage={images.reasonablyTypedExample} />
+
+        <Slide transition={["slide"]} bgColor="primary" notes={"hark back..."}>
+          <Heading fit>RE in JS</Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgImage={images.p12} />
+
+        <Slide transition={["slide"]} bgImage={images.reinjs1} />
+
+        <Slide transition={["slide"]} bgImage={images.reinjs2} />
+
+        <Slide transition={["slide"]} bgImage={images.reinjs3} />
+
+        <Slide transition={["slide"]}>
+          <Image src={images.webpacklogo} width="80%" />
+        </Slide>
+
+        <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit textColor="tertiary">
+            bsb -make-world
+          </Heading>
+          <Heading size={2} textColor="tertiary">
+            &&
+          </Heading>
+          <Heading fit textColor="tertiary">
+            yarn webpack
+          </Heading>
+        </Slide>
+
+        <Slide
+          transition={["slide"]}
+          bgColor="tertiary"
+          notes={"I agree, we already ahve tools etc"}
+        >
+          <Heading size={6} caps fit textColor="primary" margin={10}>
+            Sounds like
+          </Heading>
+          <Heading size={6} caps fit textColor="primary" margin={10}>
+            effort
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]}>
+          <Image src={images.babelLogo} width="90%" />
+          <Heading size={4} textColor={"tertiary"}>
+            babel-plugin-bucklescript
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]}>
+          <Image src={images.webpacklogo} width="50%" />
+          <Heading size={4} textColor={"tertiary"}>
+            bs-loader
+          </Heading>
+        </Slide>
+
+        <Slide bgImage={images.reimport} />
+
         {
           // poeple design these fantastic systesm
           // amazing idea
           // but interop is maybe the most important
           // BS FFI is really, really good and useable
           // Other JS, the DOM etc
+          // raw to bail you out
         }
 
-        <Slide>In JS? Compile to JS, bundle it all in. </Slide>
-
-        <Slide>
-          But what if you want to touch something outside the magic type garden?
-        </Slide>
 
         <Slide>performance compile ties human readable interop</Slide>
 
@@ -903,150 +1008,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-          <Layout>
-            <Fill>
-              <Image src={images.flowLogo} height="250px" />
-            </Fill>
-            <Fill>
-              <Image src={images.babelLogo} height="250px" />
-            </Fill>
-          </Layout>
-          <Layout>
-            <Fill>
-              <Image src={images.eslintLogo} height="250px" />
-            </Fill>
-            <Fill>
-              <Image src={images.prettierLogo} height="250px" />
-            </Fill>
-          </Layout>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.flowLogo} height="100%" />
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary">
-            OCaml is
-          </Heading>
-          <Heading fit caps textColor="tertiary">
-            typed
-          </Heading>
-          <Appear>
-            <Heading size={6} textColor="tertiary" margin={10}>
-              (Flow is written in OCaml)
-            </Heading>
-          </Appear>
-        </Slide>
-
-        <Slide transition={["slide"]} bgImage={images.vsCodeEditor} />
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.babelLogo} width="100%" />
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={5} caps textColor="tertiary" margin={10}>
-            Bucklescript compiles
-          </Heading>
-          <Heading fit caps textColor="tertiary" margin={10}>
-            10x faster
-          </Heading>
-          <Heading size={5} caps textColor="tertiary" margin={10}>
-            than TypeScript
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={10}>
-            Performant JS 🚀
-          </Heading>
-          <Image src={images.benchmarks} width="100%" />
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary">
-            Amazing
-          </Heading>
-          <Heading fit caps textColor="tertiary">
-            Interop
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit textColor="tertiary">
-            Human readable
-          </Heading>
-          <Heading fit textColor="tertiary">
-            JS output
-          </Heading>
-          <Heading size={1} textColor="tertiary">
-            😱
-          </Heading>
-        </Slide>
-
-        <Slide
-          transition={["slide"]}
-          bgImage={images.number1}
-          className="compiled"
-        />
-
-        <Slide
-          transition={["slide"]}
-          bgImage={images.number2}
-          className="compiled"
-        />
-
-        <Slide transition={["slide"]} bgColor="secondary">
-          <Image src={images.seanGrove} height="50%" />
-          <Heading fit caps textColor="primary">
-            @sgrove
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.prettierLogo} height="100%" />
-        </Slide>
-
-        <Slide transition={["slide"]} bgImage={images.refmt} />
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Image src={images.eslintLogo} height="400px" />
-        </Slide>
-
-        <Slide
-          transition={["slide"]}
-          bgImage={images.reasonErrors}
-          className="dep"
-        />
-
-        <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary" margin={10}>
             Language
           </Heading>
           <Heading fit caps textColor="tertiary">
             features
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={3} fit textColor="tertiary">
-            Functional
-          </Heading>
-          <Heading size={2} textColor="tertiary" margin={"50px 0 50px 0"}>
-            BUT
-          </Heading>
-          <Heading size={3} fit textColor="tertiary">
-            Permissive
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} textColor="tertiary">
-            Type Hype!
-          </Heading>
-          <Heading size={1} textColor="tertiary" margin={"50 0 0 0"}>
-            Pattern Matching!
           </Heading>
         </Slide>
 
@@ -1084,120 +1050,6 @@ export default class Presentation extends React.Component {
           </Heading>
           <Heading caps fit textColor="tertiary" margin={10}>
             Native compilation
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} caps textColor="tertiary" margin={10}>
-            x32/x64
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            💻 OCaml home turf
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            💻 Compile to system
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            💻 Interact with UI libs etc
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} caps textColor="tertiary" margin={10}>
-            Mobile
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            📱 Compile to ARM
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            📱 Interop with ObjC libs etc
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            📱 Rad performance
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} caps textColor="tertiary" margin={10}>
-            Embedded
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            🖲 Compile to ARM
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            🖲 Interop with... whatever
-          </Heading>
-          <Heading
-            size={5}
-            textAlign="left"
-            margin={"30px 0 0 50px"}
-            caps
-            textColor="secondary"
-            margin={10}
-          >
-            🖲 Rad performance
-          </Heading>
-        </Slide>
-
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin={10}>
-            ⚡️ Unikernels?! ⚡️
           </Heading>
         </Slide>
 
