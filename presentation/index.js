@@ -135,11 +135,19 @@ const images = {
   legacy8: require("../assets/legacy/8.png"),
   legacy9: require("../assets/legacy/9.png"),
   legacy10: require("../assets/legacy/10.png"),
-  legacy45: require("../assets/legacy/4.5.png")
+  legacy45: require("../assets/legacy/4.5.png"),
+  tt1: require("../assets/ttt/1.jpg"),
+  tt2: require("../assets/ttt/2.png"),
+  tt3: require("../assets/ttt/3.png"),
+  tt4: require("../assets/ttt/4.png"),
+  tt5: require("../assets/ttt/5.png"),
+  tictactoe: require("../assets/tictacroe.png")
 };
 
 const videos = {
-  synth: require("../assets/synthwave.webm")
+  synth: require("../assets/synthwave.webm"),
+  bsplat: require("../assets/installbsplat.mp4"),
+  bsbinit: require("../assets/bsbinit.mp4")
 };
 
 preloader(images);
@@ -156,6 +164,25 @@ const theme = createTheme(
     secondary: "Helvetica"
   }
 );
+
+// const Rf = (props) => <div className="ratio-fix">{React.Children.map((c) => React.cloneElement(c, props))}</div>;
+
+class Rf extends React.Component {
+  render() {
+    return (
+    <div className="ratio-fix">{React.Children.map((c) => React.cloneElement(c, this.props))}</div>);
+  }
+}
+
+
+// React.Children.map(this.props.children,
+//   (child) => React.cloneElement(child, {
+//     doSomething: this.doSomething
+//   })
+//  );
+
+//  return <div>{childrenWithProps}</div>
+
 
 export default class Presentation extends React.Component {
   render() {
@@ -315,14 +342,12 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide
           transition={["slide"]}
-          bgImage={images.p1}
-          className="compiled"
-        />
+          className="full-screen"
+        ><video autoPlay src={videos.bsplat} /></Slide>
         <Slide
           transition={["slide"]}
-          bgImage={images.p2}
-          className="compiled"
-        />
+          className="full-screen"
+        ><video autoPlay src={videos.bsbinit} /></Slide>
         <Slide
           transition={["slide"]}
           bgImage={images.p3}
@@ -331,7 +356,7 @@ export default class Presentation extends React.Component {
         <Slide
           transition={["slide"]}
           bgImage={images.p4}
-          className="compiled"
+          className="ratio-fix"
         />
         <Slide
           transition={["slide"]}
@@ -614,10 +639,10 @@ export default class Presentation extends React.Component {
         }
         <Slide transition={["slide"]} bgColor="tertiary">
           <Heading size={6} caps fit textColor="primary" margin={10}>
-            Why
+            What does this
           </Heading>
           <Heading size={6} caps fit textColor="primary" margin={10}>
-            bother?
+            solve?
           </Heading>
         </Slide>
         {
@@ -661,6 +686,22 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
         <Slide bgImage={images.vac} />
+
+        <Slide transition={["slide"]} bgColor="secondary">
+          <Image src={images.tt1} height="50%" />
+          <Heading fit caps textColor="primary">
+            @ryyppy
+          </Heading>
+        </Slide>
+
+        <Slide transition={["slide"]} bgImage={images.tictactoe} />
+
+        <Slide transition={["slide"]} bgImage={images.tt2} />
+        <Slide transition={["slide"]} bgImage={images.tt3} />
+        <Slide transition={["slide"]} bgImage={images.tt4} />
+        <Slide transition={["slide"]} bgImage={images.tt5} />
+
+
         {
           // <Slide>
           //   terminal project BS config codelens Simple counter example Hindley
@@ -714,7 +755,6 @@ export default class Presentation extends React.Component {
         {
           // OCAML obssessive about speed
         }
-        <Slide>BSB vid here</Slide>
         <Slide transition={["fade"]} bgImage={images.ojcompare} />
         <Slide
           transition={["fade"]}
@@ -771,7 +811,7 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
-            Compile expressio
+            Compile expression
           </Heading>
 
           <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
@@ -814,11 +854,13 @@ export default class Presentation extends React.Component {
           transition={["slide"]}
           bgImage={images.number1}
           className="compiled"
+          bgColor="secondary"
         />
         <Slide
           transition={["slide"]}
           bgImage={images.number2}
           className="compiled"
+          bgColor="secondary"
         />
         <Slide transition={["slide"]} bgColor="secondary">
           <Image src={images.seanGrove} height="50%" />
@@ -915,7 +957,7 @@ export default class Presentation extends React.Component {
             bs-loader
           </Heading>
         </Slide>
-        <Slide bgImage={images.reimport} transition={["slide"]}/>
+        <Slide bgImage={images.reimport} transition={["slide"]} />
         <Slide transition={["slide"]} bgColor="primary">
           <Image src={images.reasonReactLogo} height="100%" />
         </Slide>
@@ -951,7 +993,6 @@ export default class Presentation extends React.Component {
         <Slide transition={["Slide"]} bgImage={images.ccra22} />
         <Slide transition={["Slide"]} bgImage={images.ccra23} />
 
-
         <Slide transition={["slide"]} bgColor={"tertiary"}>
           <Heading fit caps textColor="primary">
             Sure, but what about
@@ -960,7 +1001,6 @@ export default class Presentation extends React.Component {
             legacy?
           </Heading>
         </Slide>
-
 
         <Slide transition={["Slide"]} bgImage={images.legacy1} />
         <Slide transition={["Slide"]} bgImage={images.legacy2} />
@@ -973,7 +1013,6 @@ export default class Presentation extends React.Component {
         <Slide transition={["Slide"]} bgImage={images.legacy8} />
         <Slide transition={["Slide"]} bgImage={images.legacy9} />
         <Slide transition={["Slide"]} bgImage={images.legacy10} />
-
 
         {
           // poeple design these fantastic systesm
@@ -997,23 +1036,23 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
-        <Layout>
-          <Fill>
-            <Image src={images.flowLogo} height="250px" />
-          </Fill>
-          <Fill>
-            <Image src={images.babelLogo} height="250px" />
-          </Fill>
-        </Layout>
-        <Layout>
-          <Fill>
-            <Image src={images.eslintLogo} height="250px" />
-          </Fill>
-          <Fill>
-            <Image src={images.prettierLogo} height="250px" />
-          </Fill>
-        </Layout>
-      </Slide>
+          <Layout>
+            <Fill>
+              <Image src={images.flowLogo} height="250px" />
+            </Fill>
+            <Fill>
+              <Image src={images.babelLogo} height="250px" />
+            </Fill>
+          </Layout>
+          <Layout>
+            <Fill>
+              <Image src={images.eslintLogo} height="250px" />
+            </Fill>
+            <Fill>
+              <Image src={images.prettierLogo} height="250px" />
+            </Fill>
+          </Layout>
+        </Slide>
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary" margin={10}>
@@ -1035,7 +1074,6 @@ export default class Presentation extends React.Component {
             more thing
           </Heading>
         </Slide>
-
 
         <Slide transition={["slide"]} bgColor="primary">
           <Heading fit caps textColor="tertiary" margin={10}>
@@ -1094,7 +1132,6 @@ export default class Presentation extends React.Component {
             ⚡️ Each UK into Git!
           </Heading>
         </Slide>
-
 
         {
           // Docs are great now
@@ -1163,7 +1200,7 @@ export default class Presentation extends React.Component {
             margin={10}
             padding={"30px 0"}
           >
-            👶  Immature
+            👶 Immature
           </Heading>
           <Heading
             size={3}

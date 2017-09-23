@@ -18,12 +18,16 @@
 {
     max-height: 100vh !important;
     max-width: 100vw  !important;
-    overflow: ;
     padding: 0  !important;
     margin: 0;
 }
 
 .bigly-screen video 
 {
-    height: 100%;
+    height: 80%;
 }
+
+.spectacle-slide {
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+};
