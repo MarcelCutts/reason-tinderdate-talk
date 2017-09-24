@@ -142,7 +142,8 @@ const images = {
   tt4: require("../assets/ttt/4.png"),
   tt5: require("../assets/ttt/5.png"),
   tictactoe: require("../assets/tictacroe.png"),
-  messenger: require("../assets/messenger.svg")
+  messenger: require("../assets/messenger.svg"),
+  madness: require("../assets/madness.jpeg")
 };
 
 const videos = {
@@ -1241,6 +1242,7 @@ export default class Presentation extends React.Component {
             👩‍ New community
           </Heading>
         </Slide>
+        <Slide transition={["slide"]} bgImage={images.madness} />
         <Slide transition={["slide"]} bgImage={images.lair} />
 
         <Slide transition={["slide"]} bgColor="primary">

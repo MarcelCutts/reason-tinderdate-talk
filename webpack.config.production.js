@@ -42,6 +42,13 @@ module.exports = {
     }, {
       test: /\.svg$/,
       loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+    },
+    {
+      test: /\.(webm|mp4)$/,
+      loader: 'file-loader',
+      query: {
+        name: 'videos/[name].[hash:7].[ext]'
+      }
     }]
   }
 };
