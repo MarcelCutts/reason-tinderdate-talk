@@ -141,7 +141,8 @@ const images = {
   tt3: require("../assets/ttt/3.png"),
   tt4: require("../assets/ttt/4.png"),
   tt5: require("../assets/ttt/5.png"),
-  tictactoe: require("../assets/tictacroe.png")
+  tictactoe: require("../assets/tictacroe.png"),
+  messenger: require("../assets/messenger.svg")
 };
 
 const videos = {
@@ -167,13 +168,6 @@ const theme = createTheme(
 
 // const Rf = (props) => <div className="ratio-fix">{React.Children.map((c) => React.cloneElement(c, props))}</div>;
 
-class Rf extends React.Component {
-  render() {
-    return (
-    <div className="ratio-fix">{React.Children.map((c) => React.cloneElement(c, this.props))}</div>);
-  }
-}
-
 
 // React.Children.map(this.props.children,
 //   (child) => React.cloneElement(child, {
@@ -187,7 +181,7 @@ class Rf extends React.Component {
 export default class Presentation extends React.Component {
   render() {
     return (
-      <Deck transition={["slide"]} transitionDuration={500} theme={theme}>
+      <Deck transition={["slide"]} transitionDuration={500} progress="bar" theme={theme}>
         <Slide className="full-screen">
           <video autoPlay loop src={videos.synth} />
         </Slide>
@@ -650,56 +644,58 @@ export default class Presentation extends React.Component {
           // flow, lint, ci, automated testing, fuzzy testsing
           // this is better smarter safer
           // unreasonable states impossile
+        // }
+        // <Slide transition={["slide"]} bgColor="primary">
+        //   <Heading fit caps textColor="tertiary" margin="10px 0">
+        //     Common JS
+        //   </Heading>
+        //   <Heading fit caps textColor="tertiary" margin="10px 0">
+        //     Pitfalls
+        //   </Heading>
+        // </Slide>
+        // <Slide transition={["slide"]} bgColor="primary">
+        //   <Heading size={1} caps textColor="tertiary">
+        //     1.
+        //   </Heading>
+        //   <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
+        //     Runtime 💥
+        //   </Heading>
+        // </Slide>
+        // <Slide bgImage={images.smsjs} />
+        // <Slide transition={["slide"]} bgColor="primary">
+        //   <Heading size={1} caps textColor="tertiary">
+        //     2.
+        //   </Heading>
+        //   <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
+        //     Passing undefined 💥
+        //   </Heading>
+        // </Slide>
+        // <Slide bgImage={images.undefjs} />
+        // <Slide transition={["slide"]} bgColor="primary">
+        //   <Heading size={1} caps textColor="tertiary">
+        //     3.
+        //   </Heading>
+        //   <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
+        //     Twisted logic 💥
+        //   </Heading>
+        // </Slide>
+        // <Slide bgImage={images.vac} />
         }
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading fit caps textColor="tertiary" margin="10px 0">
-            Common JS
-          </Heading>
-          <Heading fit caps textColor="tertiary" margin="10px 0">
-            Pitfalls
-          </Heading>
-        </Slide>
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} caps textColor="tertiary">
-            1.
-          </Heading>
-          <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
-            Runtime 💥
-          </Heading>
-        </Slide>
-        <Slide bgImage={images.smsjs} />
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} caps textColor="tertiary">
-            2.
-          </Heading>
-          <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
-            Passing undefined 💥
-          </Heading>
-        </Slide>
-        <Slide bgImage={images.undefjs} />
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={1} caps textColor="tertiary">
-            3.
-          </Heading>
-          <Heading size={2} caps textColor="tertiary" margin="50px 0 0 0">
-            Twisted logic 💥
-          </Heading>
-        </Slide>
-        <Slide bgImage={images.vac} />
 
-        <Slide transition={["slide"]} bgColor="secondary">
-          <Image src={images.tt1} height="50%" />
-          <Heading fit caps textColor="primary">
-            @ryyppy
-          </Heading>
-        </Slide>
+         <Slide transition={["slide"]} bgColor="secondary">
+           <Image src={images.tt1} height="50%" />
+           <Heading fit caps textColor="primary">
+             @ryyppy
+           </Heading>
+         </Slide>
+
 
         <Slide transition={["slide"]} bgImage={images.tictactoe} />
 
         <Slide transition={["slide"]} bgImage={images.tt2} />
         <Slide transition={["slide"]} bgImage={images.tt3} />
         <Slide transition={["slide"]} bgImage={images.tt4} />
-        <Slide transition={["slide"]} bgImage={images.tt5} />
+        <Slide transition={["slide"]} bgImage={images.tt5} notes={"on the shape of data"}/>
 
 
         {
@@ -828,7 +824,7 @@ export default class Presentation extends React.Component {
           </Heading>
 
           <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
-            Dead code elmiintation
+            Dead code elimination
           </Heading>
 
           <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
@@ -1065,6 +1061,28 @@ export default class Presentation extends React.Component {
         {
           // GQL example here?
         }
+
+        <Slide bgImage={images.messenger} bgColor={"#0084ff"}/>
+          <Slide transition={["slide"]} bgColor="primary">
+          <Heading fit caps>
+            Messenger.com{" "}
+          </Heading>
+          <Appear>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+              {"⚡️ <100ms build"}
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+              🐜 10 bugs /year
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={4} textAlign="left" margin={"30px 0 0 50px"}>
+              🚀 Days->Mins refactor
+            </Heading>
+          </Appear>
+        </Slide>
 
         <Slide transition={["slide"]} bgColor={"primary"}>
           <Heading fit caps textColor="tertiary">
